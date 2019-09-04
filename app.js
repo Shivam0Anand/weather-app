@@ -1,8 +1,8 @@
 const request = require("request");
 const geocode = require("./utils/geocode.js");
+const forecast = require("./utils/forecast.js");
+
 // Url
-const url =
-  "https://api.darksky.net/forecast/b4c116672bb90062c3cf3ed6171b5d07/28.474388,77.503990?units=si";
 
 // Weather Request
 // request({ url: url, json: true }, (error, responce) => {
@@ -25,4 +25,9 @@ const url =
 geocode("greater noida", (error, data) => {
   console.log("error: ", error);
   console.log("data ", data);
+});
+
+forecast(28.474388, 77.50399, (error, data) => {
+  console.log("Error", error);
+  console.log("Data", data);
 });
