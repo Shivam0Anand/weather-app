@@ -46,6 +46,22 @@ app.get("/weather", (req, res) => {
   });
 });
 
+app.get("/help/*", (req, res) => {
+  res.render("404", {
+    title: "404",
+    name: "Shivam Anand",
+    errorMessage: "Help article Not found!"
+  });
+});
+
+app.get("*", (req, res) => {
+  res.render("404", {
+    title: "404",
+    name: "Shivam Anand",
+    errorMessage: "Page Note Found!"
+  });
+});
+
 app.listen(3000, () => {
   console.log("running on port : 3000");
 });
