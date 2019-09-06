@@ -34,7 +34,8 @@ app.get("/about", (req, res) => {
 app.get("/help", (req, res) => {
   res.render("help", {
     title: "Help",
-    message: "Message"
+    message: "Message",
+    name: "Shivam Anand"
   });
 });
 
