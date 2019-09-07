@@ -7,7 +7,11 @@ const messageTwo = document.getElementById("message-two");
 
 weatherForm.addEventListener("submit", e => {
   e.preventDefault();
-  const location = search.value;
+
+  let location = search.value;
+  if (location.length === 0) {
+    location = "!";
+  }
 
   messageOne.textContent = "Loading...";
   messageTwo.textContent = "";
