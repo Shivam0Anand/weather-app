@@ -6,7 +6,7 @@ const forecast = (latitude, longitude, callback) => {
     latitude +
     "," +
     longitude +
-    "?units=si";
+    "?units=si&&lang=hi";
 
   request({ url, json: true }, (error, { body }) => {
     if (error) {
@@ -18,15 +18,15 @@ const forecast = (latitude, longitude, callback) => {
         undefined,
         // console.log(body),
         body.daily.data[0].summary +
-          ". It is currently " +
+          "। फिलहाल यह " +
           body.currently.temperature +
-          " degrees out. The High today is " +
+          " डिग्री बाहर है। उच्चतम तापमान आज " +
           body.daily.data[0].temperatureHigh +
-          " With a low of " +
+          " के साथ निम्न " +
           body.daily.data[0].temperatureLow +
-          ". There is " +
+          " है। बारिश की " +
           body.currently.precipProbability * 100 +
-          "% chance of rain."
+          "% संभावना है।"
       );
     }
   });
